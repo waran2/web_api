@@ -1,13 +1,22 @@
 from flask import Flask, render_template, request
-from forms import  ReusableForm
+#from forms import  BenchForm
 from FlaskWebProject import app
 
-app = Flask(__name__)
-app.secret_key = 'development key'
+from wtforms import Form, TextField, TextAreaField, validators, StringField, SubmitField, SelectField
+#from wtforms import validators, ValidationError
+from wtforms.fields.html5 import DateField
+
+class BenchForm(Form):
+    name = TextField('Name:', validators=[validators.required()])
+    name2 = TextField('Name:', validators=[validators.required()])
+
 
 @app.route("/", methods=['GET', 'POST'])
+
+
+
 def hello():
-    form = ReusableForm(request.form)
+    form = BenchForm(request.form)
 
     print (form.errors)
     if request.method == 'POST':
@@ -21,8 +30,3 @@ def hello():
     #    flash('All the form fields are required. ')
 
     return render_template('hello.html', form=form)
-
-
-
-if __name__ == '__main__':
-   app.run(debug = True)
