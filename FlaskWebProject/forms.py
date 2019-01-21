@@ -3,8 +3,10 @@
 from wtforms import Form, TextField, TextAreaField, validators, StringField, SubmitField, SelectField
 #from wtforms import validators, ValidationError
 from wtforms.fields.html5 import DateField
+from FlaskWebProject import data
 
-shops = [(30, 'Marble Archxxx'), (10474, 'Stansted Airportxxxx')]
+#shops = [(30, 'Marble Archxxx'), (10474, 'Stansted Airportxxxx')]
+shops = data.get_shops(1)
 
 class BenchForm(Form):
     name = TextField('Name:', validators=[validators.required()])
