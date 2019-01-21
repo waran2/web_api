@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 from forms import  ReusableForm
-
+from FlaskWebProject import app
 
 app = Flask(__name__)
 app.secret_key = 'development key'
