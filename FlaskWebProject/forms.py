@@ -1,0 +1,18 @@
+#from flask_wtf import Form
+#from wtforms import TextField, IntegerField, TextAreaField, SubmitField, RadioField, SelectField
+from wtforms import Form, TextField, TextAreaField, validators, StringField, SubmitField, SelectField
+#from wtforms import validators, ValidationError
+from wtforms.fields.html5 import DateField
+
+class BenchForm(Form):
+    name = TextField('Name:', validators=[validators.required()])
+    name2 = TextField('Name:', validators=[validators.required()])
+    shop_name = SelectField('Shop name:', choices = [(1, 'shop 1'), (2, 'shop 2')])
+    production_no = SelectField('Production no:', choices = [(1,1),(2,2),(3,3),(4,4)])
+    dt = DateField('DatePicker', format='%Y-%m-%d')
+    submit = SubmitField("Send")
+
+
+class ReusableForm(Form):
+    name = TextField('Name:', validators=[validators.required()])
+    name2 = TextField('Name:', validators=[validators.required()])
