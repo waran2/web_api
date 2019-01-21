@@ -1,14 +1,6 @@
-from flask import Flask, render_template, request
-#from forms import  BenchForm
-from FlaskWebProject import app
+from flask import Flask, render_template, request, flash
+from FlaskWebProject import app, forms
 
-from wtforms import Form, TextField, TextAreaField, validators, StringField, SubmitField, SelectField
-#from wtforms import validators, ValidationError
-from wtforms.fields.html5 import DateField
-
-class BenchForm(Form):
-    name = TextField('Name:', validators=[validators.required()])
-    name2 = TextField('Name:', validators=[validators.required()])
 
 
 @app.route("/", methods=['GET', 'POST'])
@@ -16,7 +8,7 @@ class BenchForm(Form):
 
 
 def hello():
-    form = BenchForm(request.form)
+    form = forms.BenchForm(request.form)
 
     print (form.errors)
     if request.method == 'POST':
