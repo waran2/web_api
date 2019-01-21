@@ -4,10 +4,12 @@ from wtforms import Form, TextField, TextAreaField, validators, StringField, Sub
 #from wtforms import validators, ValidationError
 from wtforms.fields.html5 import DateField
 
+shops = [(30, 'Marble Archxxx'), (10474, 'Stansted Airportxxxx')]
+
 class BenchForm(Form):
     name = TextField('Name:', validators=[validators.required()])
     name2 = TextField('Name:', validators=[validators.required()])
-    shop_name = SelectField('Shop name:', choices = [(1, 'shop 1'), (2, 'shop 2')])
+    shop_name = SelectField('Shop name:', choices = shops)
     production_no = SelectField('Production no:', choices = [(1,1),(2,2),(3,3),(4,4)])
     dt = DateField('DatePicker', format='%Y-%m-%d')
     submit = SubmitField("Send")

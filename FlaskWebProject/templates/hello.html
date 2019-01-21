@@ -11,16 +11,14 @@
 {% endwith %}
 <form action="" method="post">
            {{ form.csrf }}
-<div class="input text">
-               {{ form.name.label }} {{ form.name }}</div>
-<div class="input submit">
-               <input type="submit" value="Submit"></div>
+<div class="input text">{{ form.name.label }} {{ form.name }}</div>
+<div class="input text">{{ form.shop_name.label }} {{ form.shop_name }}</div>
+<div class="input submit"><input type="submit" value="Submit"></div>
 </form>
 
 <form action="" method="post">
            {{ form.csrf }}
-<div class="input text">
-               {{ form.name2.label }} {{ form.name2 }}</div>
+<div class="input text">  {{ form.name2.label }} {{ form.name2 }}</div>
 <div class="input submit">
 
 

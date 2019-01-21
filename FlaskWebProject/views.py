@@ -12,7 +12,7 @@ def hello():
 
     print (form.errors)
     if request.method == 'POST':
-        name=request.form['name']
+        name=request.form['shop_name']
         print (name)
 
     #if form.validate():
