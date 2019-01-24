@@ -5,7 +5,7 @@ from wtforms import Form, TextField, TextAreaField, validators, StringField, Sub
 from wtforms.fields.html5 import DateField
 from FlaskWebProject import data
 
-shops = [(30, 'Marble Archxxx'), (10472, '1Stansted Airportyyyyyy')]
+shops = [(30, 'Marble ArchMMM'), (10472, '1Stansted Airportyyyyyy')]
 #shops = data.get_shops(1)
 
 class BenchForm(Form):
